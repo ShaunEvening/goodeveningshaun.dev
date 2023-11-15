@@ -1,0 +1,9 @@
+{
+  "id": "shaun-evening",
+  "name": "Shaun Evening",
+  "image": {
+    "src": "/shaun-evening.jpg",
+    "alt": "Shaun Evening"
+  },
+  "email": "shaun@verysmall.horse"
+}

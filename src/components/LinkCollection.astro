@@ -1,0 +1,44 @@
+---
+import FormattedDate from "./FormattedDate.astro";
+interface Item {
+  id: string;
+  image: {
+    src: string;
+    alt: string;
+  };
+  title: string;
+  url: string;
+  pubDate: Date;
+}
+type Props = {
+  items: Item[];
+};
+
+const { items } = Astro.props;
+---
+
+<ul
+  class="grid xl:grid-cols-2 grid-cols-1 xl:grid-flow-col md:grid-flow-row xl:gap-2 gap-6"
+>
+  {
+    items.map(({ id, image, pubDate, title, url }) => {
+      return (
+        <li
+          id={`list-${id}`}
+          class="border border-background-accent transition-all shadow-lg rounded-md hover:shadow-xl"
+        >
+          <a href={url}>
+            <div
+              class="bg-center bg-cover rounded-t-md h-[250px]"
+              style={{ backgroundImage: `url('${image.src}')` }}
+            />
+            <div class="px-8 py-6 border-t border-t-background-accent">
+              <h3 class="heading5 truncate">{title}</h3>
+              <FormattedDate date={pubDate} />
+            </div>
+          </a>
+        </li>
+      );
+    })
+  }
+</ul>
