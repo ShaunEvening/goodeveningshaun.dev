@@ -2,63 +2,12 @@
 
 ---
 
-<header>
-  <nav class="flex flex-row justify-between px-8 py-4">
-    <span class="font-normal text-2xl font-mono">
-      {"<"}
-      <span class="font-bold text-pink-600 font-mono">
-        <a href="/" class="hover:underline">GoodEveningShaun.Dev</a>
-      </span>
-      {" "}
-      <span class="text-green-700 font-bold font-mono">data-theme</span>{"="}
-      <button
-        id="themeToggle"
-        class="text-sky-700 font-normal text-lg font-mono"></button>{" />"}
-    </span>
+<header class="w-full lg:px-16 fixed bg-pink-600/10 backdrop-blur-lg px-4 z-50">
+  <nav class="flex flex-row justify-between py-4">
+    <a
+      href="/"
+      class="hover:underline text-pink-700 text-lg font-medium leading-none py-1 px-3 bg-white/70 rounded-3xl align-middle"
+      >goodeveningshaun.dev</a
+    >
   </nav>
 </header>
-<script is:inline>
-  const setThemeButtonText = (theme) => {
-    const buttonElement = document.getElementById("themeToggle");
-    buttonElement.innerText = `"${theme}"`;
-  };
-
-  const theme = (() => {
-    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-      const theme = localStorage.getItem("theme");
-      setThemeButtonText(theme);
-      return theme;
-    }
-
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      setThemeButtonText("dark");
-      return "dark";
-    }
-    setThemeButtonText("light");
-    return "light";
-  })();
-
-  if (theme === "light") {
-    document.documentElement.setAttribute("data-theme", "light");
-  } else {
-    document.documentElement.setAttribute("data-theme", "dark");
-  }
-
-  window.localStorage.setItem("theme", theme);
-
-  const handleToggleClick = () => {
-    const documentElement = document.documentElement;
-    const currentTheme = documentElement.getAttribute("data-theme");
-    const newTheme = currentTheme === "dark" ? "light" : "dark";
-
-    document.documentElement.setAttribute("data-theme", newTheme);
-    localStorage.setItem("theme", newTheme);
-
-    const buttonElement = document.getElementById("themeToggle");
-    buttonElement.innerText = `"${newTheme}"`;
-  };
-
-  document
-    .getElementById("themeToggle")
-    .addEventListener("click", handleToggleClick);
-</script>
