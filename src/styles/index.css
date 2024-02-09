@@ -42,7 +42,7 @@
         --color-violet-950: 267 93% 21%;
 
         --color-background: var(--color-violet-50);
-        --color-background-accent: var(--color-violet-100);
+        --color-background-accent: var(--color-pink-100);
         --color-foreground: var(--color-gray-700);
     }
 
