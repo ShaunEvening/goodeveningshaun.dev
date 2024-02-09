@@ -17,13 +17,17 @@ const headingClasses = [subheading && subheading.length ? "!mb-0" : "mb-10"]
 ---
 
 <section class={classes}>
-  <h2 class={headingClasses}>{title}</h2>
-  {
-    subheading && subheading.length && (
-      <span class="heading4 font-normal text-pink-700 block mb-10">
-        {subheading}
-      </span>
-    )
-  }
-  <slot />
+  <slot name="image-left" />
+  <div>
+    <h2 class={headingClasses}>{title}</h2>
+    {
+      subheading && subheading.length && (
+        <span class="heading4 font-normal text-pink-700 block mb-10">
+          {subheading}
+        </span>
+      )
+    }
+    <slot />
+  </div>
+  <slot name="image-right" />
 </section>

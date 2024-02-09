@@ -16,8 +16,6 @@ const {
   canonicalUrl,
   author,
 } = Astro.props;
-
-console.log(author);
 ---
 
 <html lang="en">
@@ -63,7 +61,7 @@ console.log(author);
 
   <body class="bg-background text-foreground">
     <Header />
-    <main>
+    <main class="pt-20">
       <article class="mx-auto !text-foreground mb-10">
         <div class="hero-image">
           {
@@ -89,7 +87,8 @@ console.log(author);
                 )
               }
             </div>
-            <h1 class="text-foreground">{title}</h1>
+            <h1 class="text-foreground !mb-2">{title}</h1>
+            <span class="text-foreground">{description}</span>
             <hr class="mb-0" />
           </div>
           <slot />
