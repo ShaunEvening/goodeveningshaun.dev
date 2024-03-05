@@ -29,7 +29,7 @@ const posts = (await getCollection("blog")).sort(
                 class="mb-4 rounded-b-none rounded-t-xl w-full max-h-[360px] object-cover"
               />
               <div class="px-4">
-                <h2 class="title heading4">{post.data.title}</h2>
+                <h2 class="title heading4 truncate">{post.data.title}</h2>
                 <p class="date heading5">
                   <FormattedDate date={post.data.pubDate} />
                 </p>
@@ -63,6 +63,11 @@ const posts = (await getCollection("blog")).sort(
     margin-bottom: 1rem;
     text-align: center;
   }
+
+  ul li:first-child img {
+    max-height: fit-content;
+  }
+
   ul li:first-child .title {
     font-size: 2.369rem;
   }
@@ -90,6 +95,10 @@ const posts = (await getCollection("blog")).sort(
     }
     ul li:first-child {
       margin-bottom: 0;
+    }
+
+    ul li:first-child .title {
+      font-size: revert;
     }
   }
 </style>

@@ -4,33 +4,24 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import FormattedDate from "../components/FormattedDate.astro";
+import { Image } from "astro:assets";
+
+import ProfilePicture from "../assets/images/2024-avatar.png";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const {
-  title,
-  description,
-  pubDate,
-  updatedDate,
-  heroImage,
-  canonicalUrl,
-  author,
-} = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, canonicalUrl } =
+  Astro.props;
 ---
 
 <html lang="en">
   <head>
     <BaseHead
-      title={title}
+      title={`Shaun Evening: ${title}`}
       description={description}
       canonicalUrl={canonicalUrl}
     />
     <style>
-      main {
-        width: calc(100% - 2em);
-        max-width: 100%;
-        margin: 0;
-      }
       .hero-image {
         width: 100%;
       }
@@ -38,10 +29,9 @@ const {
         display: block;
         margin: 0 auto;
         border-radius: 12px;
-        box-shadow: var(--box-shadow);
       }
       .title {
-        margin-bottom: 1em;
+        margin-bottom: 2em;
         padding: 1em 0;
         text-align: center;
         line-height: 1;
@@ -62,39 +52,37 @@ const {
   <body class="bg-background text-foreground">
     <Header />
     <main class="pt-20">
-      <article class="mx-auto !text-foreground mb-10">
-        <div class="hero-image">
+      <article class="mx-auto !text-foreground mb-16">
+        <div class="hero-image mb-4">
           {
             heroImage && (
-              <img
+              <Image
                 width={1020}
                 height={510}
                 src={heroImage.src}
                 alt={heroImage.alt}
+                class="shadow-lg"
               />
             )
           }
         </div>
-        <div class="prose dark:prose-invert mx-auto">
-          <div class="title">
-            <div class="date">
-              <FormattedDate date={pubDate} />
-              {
-                updatedDate && (
-                  <div class="last-updated-on">
-                    Last updated on <FormattedDate date={updatedDate} />
-                  </div>
-                )
-              }
+        <div class="title">
+          <h1 class="text-foreground !mb-2">{title}</h1>
+          <span class="text-foreground">{description}</span>
+          <div class="mt-4">
+            <div class="w-[40px] mx-auto">
+              <Image src={ProfilePicture} alt="" class="rounded-full m-0" />
             </div>
-            <h1 class="text-foreground !mb-2">{title}</h1>
-            <span class="text-foreground">{description}</span>
-            <hr class="mb-0" />
+            <span class="font-normal block mt-1">Shaun Evening</span>
+            <FormattedDate date={pubDate} />
           </div>
+        </div>
+        <div class="prose dark:prose-invert mx-auto">
+          <hr class="mb-8 mt-6" />
           <slot />
         </div>
       </article>
+      <Footer />
     </main>
-    <Footer />
   </body>
 </html>

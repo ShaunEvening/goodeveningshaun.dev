@@ -8,4 +8,9 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   site: "https://goodeveningshaun.dev",
   integrations: [mdx(), sitemap(), tailwind({ applyBaseStyles: false })],
+  image: {
+    remotePatterns: [
+      { protocol: "https:", hostname: "**.goodeveningshaun.dev" },
+    ],
+  },
 });

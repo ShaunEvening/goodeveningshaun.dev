@@ -1,0 +1,73 @@
+---
+title: How to build a greener web
+description: Understanding the carbon footprint of your website and how to lower it.
+author: "shaun-evening"
+pubDate: "Mar 5 2024"
+heroImage:
+  src: "/greener-web.png"
+  alt: ""
+---
+
+Did you know that the Internet consumes **416.2TWh** of electricity annually? This consumption results in carbon emissions equal to or even greater than those of aviation. Not to mention, this is only getting worse with the rise of crypto and cloud-computed AI! OOF!
+
+While we’ve seen major companies pledge to operate more sustainably [like Apple’s commitment to make all its products carbon-neutral by 2030](https://www.apple.com/ca/environment/), the carbon footprint of the Internet itself remains often overlooked.
+
+## Where does all this consumption come from?
+
+To better understand what we can do to lower the carbon footprint of our work, let's look at the major components of serving a web page to your users.
+
+### Hosting
+
+First and foremost, our website needs to be hosted somewhere. This means deploying it to a server, probably in a data center. As of December 2023, there are **~10,978 data centers all over the world**, each containing an average of **50,000 to 80,000 servers** that are always on, ready for us to request web pages, data, and media. These servers consume considerable power and generate enormous heat. To handle that heat and ensure the servers don't over heat, data centers need to blast their air conditioning to keep the servers frosty.
+
+### Transmission
+
+Every internet request travels from the user's device, over internet provider's wires and switches, to the data center where it's hosted. Some times this even means thousands of miles across the oceans through underwater cabling. The server then responds with the requested information, which returns to the device through the same equipment.
+
+![A detailed map of the world's underwater internet cables that connect the entire world together](/underwater-cable-map.png)
+
+Take a look at this [interactive map](https://www.submarinecablemap.com/) of the world's underwater cable map for more information about their length, who maintains them, and more!
+
+### End user devices
+
+Our devices, including phones, tablets, laptops, and smart home gadgets, are the last step of this process. Anything requested gets downloaded and rendered onto your device.
+
+While caching does reduce the number of times you need to download everything on a page, [the median webpage is ~2.5mb](https://httparchive.org/reports/page-weight?start=2017_04_15&end=latest&view=list) in HTML, CSS, JavaScript, images, fonts, etc. The bigger the download, the more electricity it takes to transmit, download, and render. This in turn means higher carbon emissions. Try putting your website’s homepage URL into the [Website Carbon Calculator](https://www.websitecarbon.com/) and see how you rank against the average website. I bet it’s higher than you think.
+
+## How can we fix this?
+
+As developers and designers, the biggest thing we can do is decrease our page weight and optimize our experiences. When we build with page weight in mind, we also make the site accessible to more people and better for the environment.
+
+Here are a few ways we can reduce our page weight:
+
+### Less client side JavaScript
+
+First and foremost, use less client-side JavaScript! Does interactivity and animations add value to your user's experience? If they do, does all code need to load at once? To decrease your JavaScript bundle, you can:
+
+- Use static site generation and/or server-side rendering
+- Lazy load chunks of the app that aren't immediately needed
+- Tree-shake and minify your code
+
+### Optimize your assets
+
+You can also optimize your images. High-quality images make your website pop, but they shouldn't weigh it down. Tools like [Astro](https://astro.build/) perform this task for free so that your images look great and are smaller in size.
+
+Ensure autoplaying GIFs, videos, and audio are off by default. This action reduces noise and the amount of content to download, process, and stream. Not to mention, no one actually likes auto played videos, right?
+
+### Subset fonts
+
+One of the most common offenders of large page weights is font files. A lot of the time, these files contain unused characters— this is where font subsetting comes in.
+
+There are tools like [Glyphhanger](https://github.com/zachleat/glyphhanger) that can help you identify unused characters and optimize your fonts. My friend, **Drew Minns** at Really Good Work!, posted a [great article](https://www.linkedin.com/feed/update/urn:li:activity:7163925450820435968/) to explain font subsetting.
+
+### Green hosting providers
+
+Data centers are beginning to lower their carbon emissions by investing in carbon mitigation systems and green energy. If you wish to switch to green hosting, the Green Web Foundation has a [directory](https://app.greenweb.org/directory/) of green hosting services.
+
+## Let’s build a greener web together
+
+The web currently produces a significant amount of carbon emissions, but it doesn't have to remain that way. The methods I listed are a few ways we can start to build a more sustainable and accessible web.
+
+If this is something that’s interesting to you, let’s stay in touch! The more people we have designing and building a greener web, the larger our impact.
+
+Let me know what you think via [Twitter](https://twitter.com/Integrayshaun), [Threads](https://www.threads.net/@shaunevening), or connect with me on [LinkedIn](https://www.linkedin.com/in/shaunevening/).
