@@ -8,7 +8,7 @@ type Props = CollectionEntry<"blog"> & { isFirst: boolean };
 const { slug, data, isFirst } = Astro.props;
 
 const { default: headerImage } = await import(
-  `../assets/images/blogs/${slug}/${data.heroImage.src}`
+  `../assets/images/blogs/${slug}/${data.heroImage.src}.png`
 );
 ---
 

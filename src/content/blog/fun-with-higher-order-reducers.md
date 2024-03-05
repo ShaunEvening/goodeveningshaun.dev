@@ -4,7 +4,7 @@ description: How to turn common Redux patterns into reusable code.
 author: "shaun-evening"
 pubDate: "Sep 11 2018"
 heroImage:
-  src: "Fun-with-HOR.png"
+  src: "Fun-with-HOR"
   alt: ""
 canonicalUrl: "https://medium.com/@shaunlloyd/fun-with-higher-order-reducers-ab2e6a34188e"
 ---

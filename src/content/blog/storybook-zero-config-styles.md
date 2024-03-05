@@ -4,7 +4,7 @@ description: New zero-config support for JavaScript's most popular styling libra
 author: "shaun-evening"
 pubDate: "Jun 22 2023"
 heroImage:
-  src: "addon-styling-hero-codemods.gif"
+  src: "addon-styling-hero-codemods"
   alt: ""
 canonicalUrl: "https://storybook.js.org/blog/zero-config-support-for-tailwind-mui-styled-components-and-emotion/"
 ---
