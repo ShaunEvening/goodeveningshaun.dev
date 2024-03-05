@@ -8,10 +8,16 @@ import { Image } from "astro:assets";
 
 import ProfilePicture from "../assets/images/2024-avatar.png";
 
-type Props = CollectionEntry<"blog">["data"];
+type Props = CollectionEntry<"blog">;
+
+const { data, slug } = Astro.props;
 
 const { title, description, pubDate, updatedDate, heroImage, canonicalUrl } =
-  Astro.props;
+  data;
+
+const { default: headerImage } = await import(
+  `../assets/images/blogs/${slug}/${heroImage.src}`
+);
 ---
 
 <html lang="en">
@@ -52,14 +58,14 @@ const { title, description, pubDate, updatedDate, heroImage, canonicalUrl } =
   <body class="bg-background text-foreground">
     <Header />
     <main class="pt-20">
-      <article class="mx-auto !text-foreground mb-16">
+      <article class="mx-2 lg:mx-0 !text-foreground mb-16">
         <div class="hero-image mb-4">
           {
             heroImage && (
               <Image
                 width={1020}
                 height={510}
-                src={heroImage.src}
+                src={headerImage}
                 alt={heroImage.alt}
                 class="shadow-lg"
               />
@@ -77,7 +83,7 @@ const { title, description, pubDate, updatedDate, heroImage, canonicalUrl } =
             <FormattedDate date={pubDate} />
           </div>
         </div>
-        <div class="prose dark:prose-invert mx-auto">
+        <div class="prose dark:prose-invert prose-li:text-body mx-auto">
           <hr class="mb-8 mt-6" />
           <slot />
         </div>

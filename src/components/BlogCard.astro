@@ -1,0 +1,82 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+import FormattedDate from "./FormattedDate.astro";
+
+type Props = CollectionEntry<"blog"> & { isFirst: boolean };
+
+const { slug, data, isFirst } = Astro.props;
+
+const { default: headerImage } = await import(
+  `../assets/images/blogs/${slug}/${data.heroImage.src}`
+);
+---
+
+<li class:list={["rounded-xl shadow-md pb-4 bg-white", { first: isFirst }]}>
+  <a href={`/blog/${slug}/`}>
+    <Image
+      src={headerImage}
+      alt={data.heroImage.alt}
+      class="mb-4 rounded-b-none rounded-t-xl w-full max-h-[360px] object-cover"
+    />
+    <div class="px-4">
+      <h2 class="title heading4 truncate">{data.title}</h2>
+      <p class="date heading5">
+        <FormattedDate date={data.pubDate} />
+      </p>
+    </div>
+  </a>
+</li>
+
+<style>
+  li {
+    width: calc(50% - 1rem);
+  }
+  li * {
+    text-decoration: none;
+    transition: 0.2s ease;
+  }
+  li.first {
+    width: 100%;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  ul li.first img {
+    max-height: fit-content;
+  }
+
+  ul li.first .title {
+    font-size: 2.369rem;
+  }
+  ul li a {
+    display: block;
+  }
+  .date {
+    margin: 0;
+    color: rgb(var(--gray));
+  }
+  ul li a:hover h4,
+  ul li a:hover .date {
+    color: rgb(var(--accent));
+  }
+  ul a:hover img {
+    box-shadow: var(--box-shadow);
+  }
+  @media (max-width: 720px) {
+    ul {
+      gap: 0.5em;
+    }
+    ul li {
+      width: 100%;
+      text-align: center;
+    }
+    ul li.first {
+      margin-bottom: 0;
+    }
+
+    ul li.first .title {
+      font-size: revert;
+    }
+  }
+</style>

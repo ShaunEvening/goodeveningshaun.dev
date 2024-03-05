@@ -4,9 +4,12 @@ description: Understanding the carbon footprint of your website and how to lower
 author: "shaun-evening"
 pubDate: "Mar 5 2024"
 heroImage:
-  src: "/greener-web.png"
+  src: "blog-header.png"
   alt: ""
 ---
+
+import { Image } from 'astro:assets';
+import CableMapImage from '../../assets/images/blogs/greener-web-tips/underwater-cable-map.png';
 
 Did you know that the Internet consumes **416.2TWh** of electricity annually? This consumption results in carbon emissions equal to or even greater than those of aviation. Not to mention, this is only getting worse with the rise of crypto and cloud-computed AI! OOF!
 
@@ -18,13 +21,16 @@ To better understand what we can do to lower the carbon footprint of our work, l
 
 ### Hosting
 
-First and foremost, our website needs to be hosted somewhere. This means deploying it to a server, probably in a data center. As of December 2023, there are **~10,978 data centers all over the world**, each containing an average of **50,000 to 80,000 servers** that are always on, ready for us to request web pages, data, and media. These servers consume considerable power and generate enormous heat. To handle that heat and ensure the servers don't over heat, data centers need to blast their air conditioning to keep the servers frosty.
+First and foremost, your website needs to be hosted somewhere. This means deploying it to a server, probably in a data center. As of December 2023, there are **~10,978 data centers all over the world**, each containing an average of **50,000 to 80,000 servers** that are always on, ready for us to request web pages, data, and media. These servers consume considerable power and generate enormous heat. To handle that heat and ensure the servers don't over heat, data centers need to blast their air conditioning to keep the servers frosty.
 
 ### Transmission
 
 Every internet request travels from the user's device, over internet provider's wires and switches, to the data center where it's hosted. Some times this even means thousands of miles across the oceans through underwater cabling. The server then responds with the requested information, which returns to the device through the same equipment.
 
-![A detailed map of the world's underwater internet cables that connect the entire world together](/underwater-cable-map.png)
+<Image
+  src={CableMapImage}
+  alt="A detailed map of the world's underwater internet cables that connect the entire world together"
+/>
 
 Take a look at this [interactive map](https://www.submarinecablemap.com/) of the world's underwater cable map for more information about their length, who maintains them, and more!
 
@@ -62,7 +68,7 @@ There are tools like [Glyphhanger](https://github.com/zachleat/glyphhanger) that
 
 ### Green hosting providers
 
-Data centers are beginning to lower their carbon emissions by investing in carbon mitigation systems and green energy. If you wish to switch to green hosting, the Green Web Foundation has a [directory](https://app.greenweb.org/directory/) of green hosting services.
+Data centers are beginning to lower their carbon emissions by investing in carbon mitigation systems and green energy. If you wish to switch to green hosting, the Green Web Foundation has a [directory of green hosting services](https://app.greenweb.org/directory/).
 
 ## Let’s build a greener web together
 

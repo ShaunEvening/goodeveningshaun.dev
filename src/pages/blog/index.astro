@@ -1,8 +1,8 @@
 ---
 import { getCollection } from "astro:content";
-import FormattedDate from "../../components/FormattedDate.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Callout from "../../components/Callout.astro";
+import BlogCard from "../../components/BlogCard.astro";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -17,27 +17,7 @@ const posts = (await getCollection("blog")).sort(
     </Callout>
     <h1 class="mb-8">Blog</h1>
     <ul>
-      {
-        posts.map((post) => (
-          <li class="rounded-xl shadow-md pb-4 bg-white">
-            <a href={`/blog/${post.slug}/`}>
-              <img
-                width={720}
-                height={360}
-                src={post.data.heroImage.src}
-                alt={post.data.heroImage.alt}
-                class="mb-4 rounded-b-none rounded-t-xl w-full max-h-[360px] object-cover"
-              />
-              <div class="px-4">
-                <h2 class="title heading4 truncate">{post.data.title}</h2>
-                <p class="date heading5">
-                  <FormattedDate date={post.data.pubDate} />
-                </p>
-              </div>
-            </a>
-          </li>
-        ))
-      }
+      {posts.map((post, i) => <BlogCard {...post} isFirst={i === 0} />)}
     </ul>
   </section>
 </BaseLayout>
