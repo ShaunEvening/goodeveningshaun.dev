@@ -1,5 +1,4 @@
 ---
-import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 
 import BaseLayout from "../layouts/BaseLayout.astro";
@@ -11,17 +10,18 @@ import RightArrowIcon from "../components/icons/RightArrowIcon.astro";
 
 import { SOCIAL_LINKS } from "../consts";
 import HEADSHOT from "../assets/images/2024-profile-4.png";
+// import { getBlogs } from "../utils/blogs";
 
-const posts = (await getCollection("blog"))
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .slice(0, 4)
-  .map((post) => ({
-    id: post.slug,
-    title: post.data.title,
-    url: `/blog/${post.slug}`,
-    pubDate: post.data.pubDate,
-    image: post.data.heroImage,
-  }));
+// const posts = (await getBlogs())
+//   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+//   .slice(0, 4)
+//   .map((post) => ({
+//     id: post.slug,
+//     title: post.data.title,
+//     url: `/blog/${post.slug}`,
+//     pubDate: post.data.pubDate,
+//     image: post.data.heroImage,
+//   }));
 ---
 
 <BaseLayout>

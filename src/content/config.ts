@@ -26,6 +26,7 @@ const blog = defineCollection({
     }),
     canonicalUrl: z.string().optional(),
     author: reference("authors"),
+    isDraft: z.boolean().optional(),
   }),
 });
 
