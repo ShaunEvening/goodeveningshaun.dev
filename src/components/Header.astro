@@ -48,13 +48,18 @@ import ThemeIcon from "./ThemeIcon.astro";
   })();
 
   document.documentElement.setAttribute("data-theme", theme);
+  document
+    .getElementById("themeToggle")
+    .setAttribute("aria-checked", theme === "light" ? "false" : "true");
   window.localStorage.setItem("theme", theme);
 
   const handleToggleClick = () => {
     const element = document.documentElement;
+    const toggleElement = document.getElementById("themeToggle");
 
     const isDark = element.getAttribute("data-theme") === "dark";
     element.setAttribute("data-theme", isDark ? "light" : "dark");
+    toggleElement.setAttribute("aria-checked", isDark ? "false" : "true");
     localStorage.setItem("theme", isDark ? "light" : "dark");
   };
 
