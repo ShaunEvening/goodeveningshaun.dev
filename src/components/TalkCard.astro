@@ -1,33 +1,37 @@
 ---
-import type { CollectionEntry } from "astro:content";
 import { Image } from "astro:assets";
 import FormattedDate from "./FormattedDate.astro";
 
-type Props = CollectionEntry<"blog"> & { isFirst: boolean };
+interface Props {
+  isFirst: boolean;
+  id: string;
+  url: string;
+  title: string;
+  conference: string;
+  date: Date;
+}
 
-const { slug, data, isFirst } = Astro.props;
+const { id, isFirst, url, title, conference, date } = Astro.props;
 
 const { default: headerImage } = await import(
-  `../assets/images/blogs/${slug}/${data.heroImage.src}.png`
+  `../assets/images/talks/${id}.png`
 );
 ---
 
 <li
-  class:list={[
-    "rounded-xl shadow-md pb-4 bg-white dark:bg-background-accent",
-    { first: isFirst },
-  ]}
+  class:list={["rounded-xl shadow-md pb-4 bg-white dark:bg-background-accent"]}
 >
-  <a href={`/blog/${slug}/`}>
+  <a href={url} target="_blank">
     <Image
       src={headerImage}
-      alt={data.heroImage.alt}
-      class="mb-4 rounded-b-none rounded-t-xl w-full max-h-[360px] object-cover"
+      alt=""
+      class="mb-4 rounded-b-none rounded-t-xl w-full object-cover"
     />
     <div class="px-4">
-      <h2 class="title heading4 truncate">{data.title}</h2>
-      <p class="date heading5">
-        <FormattedDate date={data.pubDate} />
+      <h2 class="title heading4 truncate">{title}</h2>
+      <span class="font-normal">{conference}</span>
+      <p class="date heading6">
+        <FormattedDate date={date} />
       </p>
     </div>
   </a>

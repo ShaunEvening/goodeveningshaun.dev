@@ -1,11 +1,44 @@
 ---
 import HireMeCallToAction from "./HireMeCallToAction.astro";
+import { SOCIAL_LINKS } from "../consts";
 const today = new Date();
 ---
 
-<footer class="text-foreground bg-background-accent pb-6">
+<footer class="text-foreground bg-background-accent">
   <HireMeCallToAction />
-  <span class="block pt-6 heading5 lg:px-16 px-4">
+  <nav
+    aria-label="Secondary"
+    class="grid grid-cols-2 gap-12 sm:flex sm:flex-wrap sm:gap-16 lg:gap-20 lg:px-16 px-4 py-6 bg-pink-700 text-white dark:bg-gray-900"
+  >
+    <section class="group flex flex-col">
+      <h2 id="footer-heading-about" class="heading5 mb-3 opacity-80">About</h2>
+      <ul
+        aria-labelledby="footer-heading-about"
+        class="list-none flex flex-col gap-2"
+      >
+        <li><a href="/">Home</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/talks">Talks</a></li>
+      </ul>
+    </section>
+    <section class="group flex flex-col">
+      <h2 id="footer-heading-connect" class="heading5 mb-3 opacity-80">
+        Connect
+      </h2>
+      <ul
+        aria-labelledby="footer-heading-connect"
+        class="list-none flex flex-col gap-2"
+      >
+        <li><a href={SOCIAL_LINKS.TWITTER} target="_blank">Twitter</a></li>
+        <li><a href={SOCIAL_LINKS.THREADS} target="_blank">Threads</a></li>
+        <li><a href={SOCIAL_LINKS.MASTODON} target="_blank">Mastadon</a></li>
+        <li><a href={SOCIAL_LINKS.GITHUB} target="_blank">GitHub</a></li>
+      </ul>
+    </section>
+  </nav>
+  <span
+    class="block pb-6 heading6 font-normal lg:px-16 px-4 bg-pink-700 text-white dark:bg-gray-900"
+  >
     &copy; {today.getFullYear()} Shaun Evening. All rights reserved.
   </span>
 </footer>

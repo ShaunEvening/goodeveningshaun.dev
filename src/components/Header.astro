@@ -1,28 +1,64 @@
 ---
-
+import ThemeIcon from "./ThemeIcon.astro";
 ---
 
-<header class="w-full lg:px-16 fixed px-4 z-50">
-  <nav class="flex items-center justify-center py-2">
-    <div
-      class="py-3 px-6 bg-violet-50/80 backdrop-blur-md border-2 border-violet-100/90 rounded-3xl flex gap-4"
-    >
+<header
+  id="header-container"
+  class="w-full lg:px-16 fixed px-4 py-1 z-50 grid grid-cols-3 backdrop-blur-none bg-pink-700 transition-colors duration-700"
+>
+  <a
+    href="/"
+    class="text-2xl leading-none font-semibold text-pink-50 self-center whitespace-nowrap"
+    >Shaun <span class="font-normal text-2xl">Evening</span></a
+  >
+  <nav class="flex items-center justify-center">
+    <div class="py-3 px-2 flex gap-4">
       <a
         href="/"
-        class="hover:underline text-pink-700 text-lg font-semibold leading-none"
+        class="hover:underline text-pink-50 text-lg font-normal leading-none"
         >Home</a
       >
       <a
         href="/blog"
-        class="hover:underline text-pink-700 text-lg font-semibold leading-none"
+        class="hover:underline text-pink-50 text-lg font-normal leading-none"
         >Blog</a
       >
 
       <a
         href="/talks"
-        class="hover:underline text-pink-700 text-lg font-semibold leading-none"
+        class="hover:underline text-pink-50 text-lg font-normal leading-none"
         >Talks</a
       >
     </div>
   </nav>
+  <div class="flex justify-end items-center">
+    <ThemeIcon />
+  </div>
 </header>
+
+<script is:inline>
+  const theme = (() => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      return "dark";
+    }
+    return "light";
+  })();
+
+  document.documentElement.setAttribute("data-theme", theme);
+  window.localStorage.setItem("theme", theme);
+
+  const handleToggleClick = () => {
+    const element = document.documentElement;
+
+    const isDark = element.getAttribute("data-theme") === "dark";
+    element.setAttribute("data-theme", isDark ? "light" : "dark");
+    localStorage.setItem("theme", isDark ? "light" : "dark");
+  };
+
+  document
+    .getElementById("themeToggle")
+    .addEventListener("click", handleToggleClick);
+</script>

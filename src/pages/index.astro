@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
 
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Section from "../components/Section.astro";
@@ -7,6 +8,9 @@ import Section from "../components/Section.astro";
 import GithubIcon from "../components/icons/GithubIcon.astro";
 import LinkedInIcon from "../components/icons/LinkedInIcon.astro";
 import RightArrowIcon from "../components/icons/RightArrowIcon.astro";
+
+import { SOCIAL_LINKS } from "../consts";
+import HEADSHOT from "../assets/images/2024-profile-4.png";
 
 const posts = (await getCollection("blog"))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
@@ -22,6 +26,7 @@ const posts = (await getCollection("blog"))
 
 <BaseLayout>
   <section
+    id="home-hero"
     class="hero min-h-screen flex gap-6 justify-center flex-col items-start pb-40 pt-48 bg-pink-600 text-violet-50 lg:px-16 px-4 antialiased"
   >
     <div class="flex flex-col justify-center items-start xl:items-start z-20">
@@ -39,7 +44,7 @@ const posts = (await getCollection("blog"))
       <span class="block font-light">Hamilton, ON, Canada</span>
       <div class="flex gap-3 py-6">
         <a
-          href="https://github.com/ShaunEvening"
+          href={SOCIAL_LINKS.GITHUB}
           target="_blank"
           class="transition-all hover:scale-110 font-semibold text-xl text-pink-600 hover:text-pink-700 border-2 border-violet-50 hover:border-violet-50 px-3 py-1 bg-violet-50 leading-none rounded-3xl capitalize"
         >
@@ -47,7 +52,7 @@ const posts = (await getCollection("blog"))
           <GithubIcon class="inline leading-none text-lg" />
         </a>
         <a
-          href="https://linkedin.com/in/shaunevening"
+          href={SOCIAL_LINKS.LINKEDIN}
           target="_blank"
           class="transition-all hover:scale-110 font-semibold text-xl text-pink-600 hover:text-pink-700 border-2 border-violet-50 hover:border-violet-50 px-3 py-1 bg-violet-50 leading-none rounded-3xl capitalize"
         >
@@ -55,7 +60,7 @@ const posts = (await getCollection("blog"))
           <LinkedInIcon class="inline leading-none text-lg" />
         </a>
         <a
-          href="mailto:shaun@verysmall.horse"
+          href={SOCIAL_LINKS.EMAIL}
           target="_blank"
           class="transition-all hover:scale-110 font-semibold text-xl text-pink-600 hover:text-pink-700 border-2 border-violet-50 hover:border-violet-50 px-3 py-1 bg-violet-50 leading-none rounded-3xl capitalize"
         >
@@ -66,34 +71,43 @@ const posts = (await getCollection("blog"))
     </div>
   </section>
 
-  <Section title="About me">
-    <p>
-      For the better part of a decade, I have immersed myself in the world of
-      design systems and UI development. I believes in making great experiences
-      easier to make for everyone. Most recently I've worked full-time
-      contributing to the improvement of <strong>Storybook</strong> with the core
-      team.
-    </p>
-    <br />
-    <p>
-      Now I want to decrease the carbon footprint of the apps and tools we use
-      everyday by sharing sustainable practices we can use as developers as we
-      build.
-    </p>
-    <br />
-    <p>
-      When I'm not coding, you can find me writing music with my band or napping
-      on the couch with my dogs: Zola, Noodles, and Eloise.
-    </p>
+  <Section title="About me" fullWidth>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+      <div class="md:col-span-2 col-span-1">
+        <p>
+          For the better part of a decade, I have immersed myself in the world
+          of design systems and UI development. I believe in making great
+          experiences easier to make for everyone. Most recently I've worked
+          full-time contributing to the improvement of <strong>Storybook</strong
+          > with the core team.
+        </p>
+        <br />
+        <p>
+          Now I want to decrease the carbon footprint of the apps and tools that
+          we use everyday by sharing sustainable practices we can adopt as
+          developers and designer as we create.
+        </p>
+        <br />
+        <p>
+          When I'm not coding, you can find me writing music with my band or
+          napping on the couch with my dogs: Zola, Noodles, and Eloise.
+        </p>
 
-    <a
-      href="mailto:shaun@verysmall.horse"
-      target="_blank"
-      class="inline-block mt-6 transition-all hover:scale-110 font-semibold text-xl text-violet-50 hover:text-white border-2 border-pink-600 hover:border-pink-700 px-3 py-1 bg-pink-600 hover:bg-pink-700 leading-none rounded-3xl capitalize"
-    >
-      <span class="leading-none text-lg mr-2">Let's chat</span>
-      <RightArrowIcon />
-    </a>
+        <a
+          href={SOCIAL_LINKS.EMAIL}
+          target="_blank"
+          class="inline-block mt-6 transition-all hover:scale-110 font-semibold text-xl text-violet-50 hover:text-white border-2 border-pink-600 hover:border-pink-700 px-3 py-1 bg-pink-600 hover:bg-pink-700 leading-none rounded-3xl capitalize"
+        >
+          <span class="leading-none text-lg mr-2">Let's chat</span>
+          <RightArrowIcon />
+        </a>
+      </div>
+      <Image
+        src={HEADSHOT}
+        alt="A close up of myself."
+        class="shadow-lg rounded-lg max-w-md w-full"
+      />
+    </div>
   </Section>
 
   <Section title="Services">
@@ -120,3 +134,27 @@ const posts = (await getCollection("blog"))
     </a>
   </Section>
 </BaseLayout>
+
+<script is:inline>
+  const heroElement = document.getElementById("home-hero");
+  const headerElement = document.getElementById("header-container");
+
+  let observer;
+
+  if (heroElement && headerElement) {
+    observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          headerElement.classList.add("!backdrop-blur-lg");
+          headerElement.classList.add("!bg-pink-700/0");
+          return;
+        }
+        headerElement.classList.remove("!backdrop-blur-lg");
+        headerElement.classList.remove("!bg-pink-700/0");
+      },
+      { rootMargin: "-100px 0px 0px 0px" }
+    );
+
+    observer.observe(heroElement);
+  }
+</script>

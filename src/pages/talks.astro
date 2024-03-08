@@ -1,20 +1,27 @@
 ---
 import Callout from "../components/Callout.astro";
+import TalkCard from "../components/TalkCard.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const oldTalks = [
+  {
+    title:
+      "Defeat Decision Paralysis: Building a Killer Design System in Isolation",
+    conference: "React Summit US 2023",
+    id: "defeat-decision-paralysis",
+    url: "https://www.youtube.com/watch?v=3z3J3X8Z3Zc",
+    date: new Date("2023-11-01"),
+  },
+];
 ---
 
 <BaseLayout>
   <section class="pt-20 lg:px-16 px-4">
-    <Callout>
-      I am in the process of aggregating all of my talks from various platforms.
-      Stay tuned!
-    </Callout>
     <h1>Talks</h1>
     <span class="text-pink-700 heading5 block mb-6"
       >Check out my conference talks and other public speaking.</span
     >
-
-    <div class="mt-10">
+    <div class="mt-10 mb-10">
       <h2 class="heading3 font-bold">Upcoming Talks</h2>
       <div class="mt-4">
         <p class="text-lg">
@@ -23,13 +30,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </p>
       </div>
     </div>
-    <div class="mt-10">
-      <h2 class="heading3 font-bold">Past Talks</h2>
-      <div class="mt-4">
-        <p class="text-lg">
-          I'm working on adding my past talks here. Check back later!
-        </p>
-      </div>
+    <div class="mb-10">
+      <h2 class="heading3 font-bold mb-4">Past Talks</h2>
+      <ul class="mb-6">
+        {oldTalks.map((talk, i) => <TalkCard {...talk} isFirst={i === 0} />)}
+      </ul>
     </div>
   </section>
 </BaseLayout>

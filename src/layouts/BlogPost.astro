@@ -72,8 +72,8 @@ const { default: headerImage } = await import(
             )
           }
         </div>
-        <div class="title">
-          <h1 class="text-foreground !mb-2">{title}</h1>
+        <div class="title max-w-5xl mx-auto">
+          <h1 class="text-foreground !mb-2 heading2">{title}</h1>
           <span class="text-foreground">{description}</span>
           <div class="mt-4">
             <div class="w-[40px] mx-auto">
@@ -82,9 +82,9 @@ const { default: headerImage } = await import(
             <span class="font-normal block mt-1">Shaun Evening</span>
             <FormattedDate date={pubDate} />
           </div>
+          <hr class="mb-8 mt-6" />
         </div>
         <div class="prose dark:prose-invert prose-li:text-body mx-auto">
-          <hr class="mb-8 mt-6" />
           <slot />
         </div>
       </article>

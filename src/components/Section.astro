@@ -1,10 +1,11 @@
 ---
-const { title, subheading, fullWidth } = Astro.props;
+const { title, subheading, fullWidth, class: classNames } = Astro.props;
 
 const classes = [
   fullWidth && "max-w-full",
   !fullWidth && "max-w-3xl",
-  "py-16",
+  "py-8",
+  "lg:py-16",
   "lg:px-16",
   "px-4",
 ]
@@ -16,18 +17,14 @@ const headingClasses = [subheading && subheading.length ? "!mb-0" : "mb-10"]
   .join(" ");
 ---
 
-<section class={classes}>
-  <slot name="image-left" />
-  <div>
-    <h2 class={headingClasses}>{title}</h2>
-    {
-      subheading && subheading.length && (
-        <span class="heading4 font-normal text-pink-700 block mb-10">
-          {subheading}
-        </span>
-      )
-    }
-    <slot />
-  </div>
-  <slot name="image-right" />
+<section class:list={[classes, classNames]}>
+  <h2 class={headingClasses}>{title}</h2>
+  {
+    subheading && subheading.length && (
+      <span class="heading4 font-normal text-pink-700 block mb-10">
+        {subheading}
+      </span>
+    )
+  }
+  <slot />
 </section>
