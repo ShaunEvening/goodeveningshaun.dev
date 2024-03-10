@@ -6,22 +6,11 @@ import Section from "../components/Section.astro";
 
 import GithubIcon from "../components/icons/GithubIcon.astro";
 import LinkedInIcon from "../components/icons/LinkedInIcon.astro";
+import TwitterIcon from "../components/icons/TwitterIcon.astro";
 import RightArrowIcon from "../components/icons/RightArrowIcon.astro";
 
 import { SOCIAL_LINKS } from "../consts";
 import HEADSHOT from "../assets/images/2024-profile-4.png";
-// import { getBlogs } from "../utils/blogs";
-
-// const posts = (await getBlogs())
-//   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-//   .slice(0, 4)
-//   .map((post) => ({
-//     id: post.slug,
-//     title: post.data.title,
-//     url: `/blog/${post.slug}`,
-//     pubDate: post.data.pubDate,
-//     image: post.data.heroImage,
-//   }));
 ---
 
 <BaseLayout>
@@ -60,6 +49,14 @@ import HEADSHOT from "../assets/images/2024-profile-4.png";
           <LinkedInIcon class="inline leading-none text-lg" />
         </a>
         <a
+          href={SOCIAL_LINKS.TWITTER}
+          target="_blank"
+          class="transition-all hover:scale-110 font-semibold text-xl text-pink-600 hover:text-pink-700 border-2 border-violet-50 hover:border-violet-50 px-3 py-1 bg-violet-50 leading-none rounded-3xl capitalize"
+        >
+          <span class="sr-only">Visit Shaun's Twitter profile.</span>
+          <TwitterIcon class="inline leading-none text-lg" />
+        </a>
+        <a
           href={SOCIAL_LINKS.EMAIL}
           target="_blank"
           class="transition-all hover:scale-110 font-semibold text-xl text-pink-600 hover:text-pink-700 border-2 border-violet-50 hover:border-violet-50 px-3 py-1 bg-violet-50 leading-none rounded-3xl capitalize"
@@ -76,16 +73,19 @@ import HEADSHOT from "../assets/images/2024-profile-4.png";
       <div class="md:col-span-2 col-span-1">
         <p>
           For the better part of a decade, I have immersed myself in the world
-          of design systems and UI development. I believe in making great
-          experiences easier to make for everyone. Most recently I've worked
-          full-time contributing to the improvement of <strong>Storybook</strong
+          of design systems and UI development. I have a passion and proven
+          track record of making great experiences easier to craft for everyone.
+          Most recently I've worked full-time contributing to <a
+            href="https://storybook.js.org"
+            target="_blank"
+            class="font-bold content-link hover:underline">Storybook</a
           > with the core team.
         </p>
         <br />
         <p>
           Now I want to decrease the carbon footprint of the apps and tools that
-          we use everyday by sharing sustainable practices we can adopt as
-          developers and designer as we create.
+          we use everyday by sharing sustainable practices that we can adopt as
+          developers and designers while we create.
         </p>
         <br />
         <p>
