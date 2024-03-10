@@ -1,0 +1,49 @@
+---
+import {
+  MOBILE_NAV_SELECTOR,
+  MOBILE_NAV_CLOSE_BUTTON_SELECTOR,
+} from "../consts";
+---
+
+<nav
+  id={MOBILE_NAV_SELECTOR}
+  class={"hidden flex-col gap-8 bg-pink-700 fixed inset-0 justify-center p-8 sm:hidden z-50"}
+>
+  <button
+    id={MOBILE_NAV_CLOSE_BUTTON_SELECTOR}
+    aria-label="Close navigation menu"
+    aria-controls={MOBILE_NAV_SELECTOR}
+    class="absolute right-4 sm:hidden top-4 text-pink-50 hover:text-pink-50/80 transition-colors duration-200 ease-in-out"
+    ><svg
+      viewBox="0 0 256 256"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      height="32"
+      width="32"
+      ><path
+        d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"
+      ></path></svg
+    ></button
+  >
+  <ul class="flex flex-col gap-3 lg:gap-24">
+    <li>
+      <a
+        href="/"
+        class="inline-block tracking-snug focus-visible:outline-bright focus-visible:outline-dashed hover:text-pink-50/80 text-pink-50 font-medium text-5xl transition-colors duration-200 ease-in-out"
+        data-astro-prefetch="tap">Home</a
+      >
+    </li><li>
+      <a
+        href="/blog"
+        class="inline-block tracking-snug focus-visible:outline-bright focus-visible:outline-dashed hover:text-pink-50/80 text-pink-50 font-medium text-5xl transition-colors duration-200 ease-in-out"
+        data-astro-prefetch="tap">Blog</a
+      >
+    </li><li>
+      <a
+        href="/talks"
+        class="inline-block tracking-snug focus-visible:outline-bright focus-visible:outline-dashed hover:text-pink-50/80 text-pink-50 font-medium text-5xl transition-colors duration-200 ease-in-out"
+        data-astro-prefetch="tap">Talks</a
+      >
+    </li>
+  </ul>
+</nav>

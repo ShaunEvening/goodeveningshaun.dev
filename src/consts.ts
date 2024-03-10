@@ -15,3 +15,7 @@ export const SOCIAL_LINKS = {
   RSS: "/rss.xml",
   THREADS: "https://www.threads.net/@shaunevening",
 };
+
+export const MOBILE_NAV_SELECTOR = "mobile-menu";
+export const MOBILE_NAV_CLOSE_BUTTON_SELECTOR = "mobile-menu-close";
+export const HAMBURGER_MENU_SELECTOR = "hamburger-menu";

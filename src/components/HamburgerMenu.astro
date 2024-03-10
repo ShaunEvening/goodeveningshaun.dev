@@ -1,0 +1,27 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { HAMBURGER_MENU_SELECTOR, MOBILE_NAV_SELECTOR } from "../consts";
+
+interface Props extends HTMLAttributes<"button"> {}
+
+const { class: className = "" } = Astro.props;
+---
+
+<button
+  aria-label="Open navigation menu"
+  aria-controls={MOBILE_NAV_SELECTOR}
+  aria-expanded="false"
+  id={HAMBURGER_MENU_SELECTOR}
+  class:list={["sm:hidden", className]}
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="32"
+    height="32"
+    fill="#FFFFFF"
+    viewBox="0 0 256 256"
+    ><path
+      d="M228,128a12,12,0,0,1-12,12H40a12,12,0,0,1,0-24H216A12,12,0,0,1,228,128ZM40,76H216a12,12,0,0,0,0-24H40a12,12,0,0,0,0,24ZM216,180H40a12,12,0,0,0,0,24H216a12,12,0,0,0,0-24Z"
+    ></path></svg
+  >
+</button>

@@ -1,17 +1,18 @@
 ---
 import ThemeIcon from "./ThemeIcon.astro";
+import HamburgerMenu from "./HamburgerMenu.astro";
 ---
 
 <header
   id="header-container"
-  class="w-full lg:px-16 fixed px-4 py-1 z-50 grid grid-cols-3 backdrop-blur-none bg-pink-700 transition-colors duration-700"
+  class="w-full lg:px-16 fixed px-4 py-1 z-50 sm:grid sm:grid-cols-3 flex justify-between backdrop-blur-none bg-pink-700 transition-colors duration-700"
 >
   <a
     href="/"
     class="text-2xl leading-none font-semibold text-pink-50 self-center whitespace-nowrap"
     >Shaun <span class="font-normal text-2xl">Evening</span></a
   >
-  <nav class="flex items-center justify-center">
+  <nav class="sm:flex items-center justify-center hidden">
     <div class="py-3 px-2 flex gap-4">
       <a
         href="/"
@@ -31,9 +32,10 @@ import ThemeIcon from "./ThemeIcon.astro";
       >
     </div>
   </nav>
-  <div class="flex justify-end items-center">
+  <div class="sm:flex justify-end items-center hidden">
     <ThemeIcon />
   </div>
+  <HamburgerMenu />
 </header>
 
 <script is:inline>
@@ -67,3 +69,5 @@ import ThemeIcon from "./ThemeIcon.astro";
     .getElementById("themeToggle")
     .addEventListener("click", handleToggleClick);
 </script>
+
+<script src="../scripts/mobile-menu.js"></script>
