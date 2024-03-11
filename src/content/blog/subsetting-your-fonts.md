@@ -6,7 +6,7 @@ pubDate: Mar 11 2024
 heroImage:
   src: "blog-header"
   alt: ""
-isDraft: true
+isDraft: false
 ---
 
 Using custom fonts is a great way to make your website pop. However, it’s also one of the fastest ways to add some serious weight to your page. Once you factor in each font file for different weights and italics, fonts can easy contribute over 1Mb of data needing to be downloaded when visiting your page. If the average page weight is 2.5Mb, that accounts for **at least 40%** of the bundle!
