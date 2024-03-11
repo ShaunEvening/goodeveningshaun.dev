@@ -55,7 +55,7 @@ export default {
       },
       fontFamily: {
         sans: [
-          "Inter",
+          "InterVariable",
           "ui-sans-serif",
           "system-ui",
           "sans-serif",
