@@ -59,23 +59,17 @@ const { default: headerImage } = await import(
   <body class="bg-background text-foreground">
     <Header />
     <main class="pt-20">
-      <article class="mx-2 lg:mx-0 !text-foreground mb-16">
-        <div class="hero-image mb-4">
+      <article class="mx-2 lg:mx-16 !text-foreground mb-16">
+        <div class="hero-image mb-4 max-w-4xl mx-auto">
           {
             heroImage && (
-              <Image
-                width={1020}
-                height={510}
-                src={headerImage}
-                alt={heroImage.alt}
-                class="shadow-lg"
-              />
+              <Image src={headerImage} alt={heroImage.alt} class="shadow-lg" />
             )
           }
         </div>
         <div class="title max-w-5xl mx-auto">
-          <h1 class="text-foreground !mb-2 heading2">{title}</h1>
-          <span class="text-foreground">{description}</span>
+          <h1 class="text-foreground !mb-3 heading2">{title}</h1>
+          <span class="text-foreground font-normal">{description}</span>
           <div class="mt-4">
             <div class="w-[40px] mx-auto">
               <Image src={ProfilePicture} alt="" class="rounded-full m-0" />
