@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import Callout from "../../components/Callout.astro";
 import BlogCard from "../../components/BlogCard.astro";
 import { getBlogs } from "../../utils/blogs";
 
@@ -11,10 +10,6 @@ const posts = (await getBlogs()).sort(
 
 <BaseLayout>
   <section class="pt-20 lg:px-16 px-4 pb-8">
-    <Callout>
-      I am in the process of aggregating all of my blog posts from various
-      platforms. Stay tuned!
-    </Callout>
     <h1 class="mb-8">Blog</h1>
     <ul>
       {posts.map((post, i) => <BlogCard {...post} isFirst={i === 0} />)}
