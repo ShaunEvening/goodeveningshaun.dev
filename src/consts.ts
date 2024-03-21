@@ -9,7 +9,7 @@ export const SOCIAL_LINKS = {
   TWITTER: "https://twitter.com/Integrayshaun",
   GITHUB: "https://github.com/ShaunEvening",
   LINKEDIN: "https://www.linkedin.com/in/shaunevening/",
-  EMAIL: "mailto:shaun@verysmall.horse",
+  EMAIL: "mailto:goodeveningshaun@gmail.com",
   MASTODON: "https://hachyderm.io/@integrayshaun",
   BLUESKY: "https://bsky.app/profile/goodeveningshaun.dev",
   RSS: "/rss.xml",
