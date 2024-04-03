@@ -1,0 +1,68 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  image: any;
+  name: string;
+  role: string;
+  url: string;
+}
+
+const { image, name, role, url } = Astro.props;
+---
+
+<li
+  class:list={[
+    "rounded-xl shadow-md py-3 px-4 bg-white dark:bg-background-accent !w-full",
+  ]}
+>
+  <div class="flex flex-col lg:flex-row lg:items-center mt-2">
+    <Image
+      src={image}
+      alt=""
+      class="mt-0 mb-2 rounded-full w-[70px] border-2 border-pink-500"
+    />
+    <div class="lg:ml-3">
+      <h3 class="title heading4 truncate my-0 text-pink-800 dark:text-pink-50">
+        {name}
+      </h3>
+      <span class="font-medium text-base">{role}</span>
+    </div>
+  </div>
+  <blockquote class="my-0 ml-2 pr-2 font-light">
+    <slot />
+  </blockquote>
+</li>
+
+<style>
+  li {
+    width: calc(50% - 1rem);
+  }
+  li * {
+    text-decoration: none;
+    transition: 0.2s ease;
+  }
+  ul li a {
+    display: block;
+  }
+  .date {
+    margin: 0;
+    color: rgb(var(--gray));
+  }
+  ul li a:hover h4,
+  ul li a:hover .date {
+    color: rgb(var(--accent));
+  }
+  ul a:hover img {
+    box-shadow: var(--box-shadow);
+  }
+  @media (max-width: 720px) {
+    ul {
+      gap: 0.5em;
+    }
+    ul li {
+      width: 100%;
+      text-align: center;
+    }
+  }
+</style>

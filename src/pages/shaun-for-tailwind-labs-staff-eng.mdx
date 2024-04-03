@@ -4,8 +4,16 @@ title: 'Tailwind Labs + Shaun Evening '
 ---
 
 import { Image } from 'astro:assets';
+import TestimonialCard from '../components/TestimonialCard.astro';
 import Headshot from '../assets/images/2024-profile-4.png';
 import AdaptiveColors from '../assets/images/adaptive-colors.png';
+
+import Chakir from '../assets/images/testimonials/Chakir.jpg';
+import Andrew from '../assets/images/testimonials/Andrew.jpg';
+import Michael from '../assets/images/testimonials/Michael-Shilman.jpg';
+import Joe from '../assets/images/testimonials/Joe.jpg';
+import Reuben from '../assets/images/testimonials/Reuben.jpg';
+import Kyle from '../assets/images/testimonials/Kyle.jpg';
 
 <Image src={Headshot} alt="" class="w-48 rounded-full mx-auto"/>
 
@@ -15,30 +23,30 @@ Hi, Tailwind Labs! My name is Shaun Evening: I’ve been a software developer fo
 
 I believe that we all deserve a better Internet—that looks and feels great. Few tools deliver on this potential more strongly than Tailwind, unlocking more ergonomic styling than ever while only generating what you need. As your next Staff Software Engineer, I will bring my experience in building high quality tooling, leading and nurturing open source communities, and writing engaging technical content to further elevate Tailwind and bring the internet of my dreams into reality.
 
-## I love building UI tooling
+## I love to build UI tooling
 
 Over the last two years, I have built multiple tools and resources that are now core to the developer experience of Storybook. These include:
 
-- Integration recipes: 14 reference articles showing how to integrate the Storybook community’s favourite tools into Storybook, which have over 300k cumulative views to date. The most popular one by far is the [Tailwind recipe](https://storybook.js.org/recipes/tailwindcss/) that has over 100k views since its release.
-- `@storybook/addon-themes`: an addon that provides a tool to switch between multiple color schemes in a click. This has [205.1k downloads/week](https://storybook.js.org/addons/@storybook/addon-themes/).
-- `@storybook/addon-styling-webpack`: an addon that helps Webpack users configure Storybook to support Sass, Less, Postcss, and more. This has [160.1k downloads/week](https://storybook.js.org/addons/@storybook/addon-styling-webpack/).
-- `@storybook/auto-config`: a codemod tool that will scan your project and auto-configure the two addons mentioned above. More on that below.
+- Integration recipes: 14 reference articles showing how to integrate the Storybook community’s favourite tools into Storybook, which have over 300k cumulative views to date. The most popular one by far is the [Tailwind recipe](https://storybook.js.org/recipes/tailwindcss/) which has over 100k views since its release.
+- [`@storybook/addon-themes`](https://storybook.js.org/addons/@storybook/addon-themes/): an addon that provides a tool to switch between multiple color schemes in a click. This has 205.1k downloads/week.
+- [`@storybook/addon-styling-webpack`](https://storybook.js.org/addons/@storybook/addon-styling-webpack/): an addon that helps Webpack users configure Storybook to support Sass, Less, Postcss, and more. This has 160.1k downloads/week.
+- [`@storybook/auto-config`](https://github.com/storybookjs/auto-config): a codemod tool that will scan your project and auto-configure the two addons mentioned above. More on that below.
 
-I have also built prototypes tools to help build better and accessible UI. For example, I have been tinkering with scripts that can build adaptive color scales. 
+I have also built prototype tools to help build better and accessible UI. For example, I have been tinkering with scripts that can build adaptive color scales. 
 
-<Image src={AdaptiveColors} alt="" class="rounded-sm mx-auto"/>
+<Image src={AdaptiveColors} alt="A series of adaptive color scales in different hues from light to dark displayed inside of Storybook." class="rounded-sm mx-auto"/>
 
-Using [Leonardo](https://leonardocolor.io/theme.html#), I generated some adaptive color scales and stored them as design tokens following the [W3C design token spec](https://design-tokens.github.io/community-group/format/). These design tokens can be processed into any format you’d like. Originally, I formatted the tokens to fit nicely in a `tailwind.config.js` file. However, with the new CSS variables format in Tailwind 4. this will be *even better.* Using a tool like Style Dictionary will make this a breeze, which is what I chose to use for this particular POC. I would love to take my learnings here and apply it to helping the Design Engineer with the building the palette creator tool in your roadmap.
+Using [Leonardo](https://leonardocolor.io/theme.html#), I generated some adaptive color scales and stored them as design tokens following the [W3C design token spec](https://design-tokens.github.io/community-group/format/). These design tokens can be processed into any format you’d like. Originally, I formatted the tokens to fit nicely in a `tailwind.config.js` file. However, with the new CSS variables format in Tailwind 4, this will be *even better.* Using a tool like [Style Dictionary](https://amzn.github.io/style-dictionary/#/) will make this a breeze, which is what I chose to use for this particular POC. I would love to take my learnings here and apply it to helping the Design Engineer with the building the palette creator tool in your roadmap.
 
 ## I sweat the small details
 
-You can develop awesome functionality, but if it looks or feels bad to use, people aren’t going to come back to it. This is extremely important to me and is a guiding of my work.
+You can develop great functionality, but if it looks or feels bad to use, people aren’t going to come back to it. This is extremely important to me and is a guiding principle of my work.
 
 For an example of this, let’s look at `@storybook/auto-config` again. This is a command line tool to help people configure their Storybooks to use their preferred styling solution and add an optional theme switcher. Here, Cindy used it to set up her Storybook with a Tailwind theme switcher, based on CSS classes.
 
 <blockquote class="twitter-tweet align-center"><p lang="en" dir="ltr">Shout out to the <a href="https://twitter.com/storybookjs?ref_src=twsrc%5Etfw">@storybookjs</a> team 😍<br/><br/>I love how colourful and informative it is when I tried to add a theme switcher tool ! <a href="https://twitter.com/hashtag/storybook?src=hash&amp;ref_src=twsrc%5Etfw">#storybook</a> <a href="https://twitter.com/hashtag/theme?src=hash&amp;ref_src=twsrc%5Etfw">#theme</a> <a href="https://twitter.com/hashtag/tailwindcss?src=hash&amp;ref_src=twsrc%5Etfw">#tailwindcss</a> <a href="https://twitter.com/hashtag/coding?src=hash&amp;ref_src=twsrc%5Etfw">#coding</a> <a href="https://twitter.com/hashtag/terminal?src=hash&amp;ref_src=twsrc%5Etfw">#terminal</a> <a href="https://twitter.com/hashtag/FrontEnd?src=hash&amp;ref_src=twsrc%5Etfw">#FrontEnd</a> <a href="https://twitter.com/hashtag/webdeveloper?src=hash&amp;ref_src=twsrc%5Etfw">#webdeveloper</a> <a href="https://t.co/sBQ9J9ILfm">pic.twitter.com/sBQ9J9ILfm</a></p>&mdash; WebDevCindy (@webdev_cindy) <a href="https://twitter.com/webdev_cindy/status/1762622200350220704?ref_src=twsrc%5Etfw">February 27, 2024</a></blockquote>
 
-Under the hood, this tool uses `recast` to build out a configuration object for the relevant tools,  then inserts it into the user’s Storybook configuration. As a tool, it was helpful, but I wanted to make sure the tool felt great to use in a way that paralleled the magic of the code.
+Under the hood, this tool uses [`recast`](https://github.com/benjamn/recast) to build out a configuration object for the relevant tools,  then inserts it into the user’s Storybook configuration. As a tool, it was helpful, but I wanted to make sure the tool felt great to use in a way that paralleled the magic of the code.
 
 I kept the messages short and sweet, with crisp formatting so that each step was easy to understand, and included a summary of everything that happened along the way. I also wanted to add some additional meaning to the output by color coding different messages: I used blue for information, orange for warnings, and green for success. CLI tools can benefit from a consistent design language, too!
 
@@ -48,34 +56,62 @@ I am super excited to take all of these experiences and apply it to projects lik
 
 ## I’m community minded and love to help
 
-Open source tools are nothing without their community. My favourite part about being a maintainer for Storybook was interacting with their award-winning community. Seriously—these gems won the GitHub universe award for best community last year. Much of what I’ve mentioned here was directly inspired by the many conversations I’ve had in the community Discord server and chats with supportive users and contributors at conferences.
+Open source tools are nothing without their community. My favourite part about being a maintainer for Storybook was interacting with their award-winning community. Seriously—these gems won the [GitHub award for *Global Grandiose* last year](https://github.blog/2023-11-09-celebrating-the-github-awards-2023-recipients/#global-grandiose-award). Much of what I’ve mentioned here was directly inspired by the many conversations I’ve had in the community Discord server and chats with supportive users and contributors at conferences.
 
 ## I’m an experienced leader
 
-Throughout my career, I have gravitated towards leadership responsibilities. As a Solution Architect at Rangle.io, I served as a team lead on client projects. While at Wealthsimple, I organized and lead an initiative to audit all of our web and mobile apps for WCAG AAA compliance, then fixing any outstanding issues. I also managed and mentored a team of 8 developers focused on the deposit and withdrawal flows in the products. I also led a front end education initiative that taught developers functional programming in JavaScript as well as React & Redux.
+Throughout my career, I have gravitated towards leadership responsibilities. As a Solution Architect at Rangle.io, I served as a team lead on client projects. While at Wealthsimple, I organized and lead an initiative to first audit all of our web and mobile apps for WCAG AAA compliance, then fix any outstanding issues. I also managed and mentored a team of 8 developers focused on the deposit and withdrawal flows in the products. Additionally, I really enjoyed leading a front-end education initiative that taught developers functional programming in JavaScript as well as React & Redux.
 
 ## I live for collaboration
 
-I believe that tools that are built *for* everyone should be made *by* everyone. Nothing great is built alone and I deeply value collaboration. While I’m comfortable working by myself, I’m my happiest  in a team environment. I love pairing with other people to work (Tuple is my favorite), so I love that you specifically called that out in the job posting.
+I believe that tools that are built *for* everyone should be made *by* everyone. Nothing great is built alone and I deeply value collaboration. While I’m comfortable working by myself, I’m at my happiest in a team environment. I love pairing with other people to work (Tuple is my favorite), so I'm encouraged that you specifically called that out in the job posting.
 
 ## BONUS: I’m a blast to work with
 
-Finally, here are some testimonials from folks I’ve worked with and supported across my previous jobs & open source projects.
+I also believe that good work is often fun, and love to create opportunities for that. This is something better experienced than explained, so I'll let these testimonials from folks I’ve worked with and supported across my previous jobs & open source projects do the talking.
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Hey there! Absolutely, count me in for a testimonial. Working with Shaun has been an absolute pleasure. He brings such enthusiasm and creativity to every collaboration, making it not only productive but also incredibly fun.</p>&mdash; Chakir Qatab (@ChakirQatab) <a href="https://twitter.com/ChakirQatab/status/1773508265445339228?ref_src=twsrc%5Etfw">March 29, 2024</a></blockquote>
+<ul class="list-none list-outside mx-0 !pl-0">
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I absolutely love working with Shaun! He’s devoted to making lives better for the people he is serving and his joyful motivation for it is wonderfully contagious. I always learn something new when collaborating with him and I have a ridiculously fun time doing it.</p>&mdash; Andrew Ortwein (@andrewortwein) <a href="https://twitter.com/andrewortwein/status/1773538808144814136?ref_src=twsrc%5Etfw">March 29, 2024</a></blockquote>
+<TestimonialCard
+    image={Chakir}
+    name="Chakir Qatab"
+    role="Storybook Maintainer for Vue"
+    url="https://twitter.com/ChakirQatab/status/1773508265445339228?ref_src=twsrc%5Etfw"
+><p lang="en" dir="ltr">Hey there! Absolutely, count me in for a testimonial. Working with Shaun has been an absolute pleasure. He brings such enthusiasm and creativity to every collaboration, making it not only productive but also incredibly fun.</p></TestimonialCard>
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Shaun is wonderful. He radiates positive energy.<br/>He also delivers. He tamed <a href="https://twitter.com/storybookjs?ref_src=twsrc%5Etfw">@storybookjs</a> unruly integrations, tackled thorny issues like theming, CLI install &amp; error docs. At every step he brought skill, care, empathy, and enthusiastic collaboration. Would work with him again!</p>&mdash; Michael Shilman @shilman@fosstodon.org (@mshilman) <a href="https://twitter.com/mshilman/status/1773597999106547844?ref_src=twsrc%5Etfw">March 29, 2024</a></blockquote>
+<TestimonialCard
+    image={Andrew}
+    name="Andrew Ortwein"
+    role="Senior Software Engineer @ Chromatic"
+    url="https://twitter.com/andrewortwein/status/1773538808144814136?ref_src=twsrc%5Etfw"
+><p lang="en" dir="ltr">I absolutely love working with Shaun! He’s devoted to making lives better for the people he is serving and his joyful motivation for it is wonderfully contagious. I always learn something new when collaborating with him and I have a ridiculously fun time doing it.</p></TestimonialCard>
 
-> Shaun is a fantastic engineer, whose sensitivity for building excellent developer tools and advocating for best-possible developer experience shines through in everything he delivers. He has immense knowledge of frontend tooling and a knack for taking technical challenges and resolving them with excellent communication and infectious enthusiasm. I loved working with Shaun on Storybook & Chromatic, and I'm so excited to follow his work in the years to come. - *Joe Vaughan, core team at Storybook*
-> 
+<TestimonialCard
+    image={Michael}
+    name="Michael Shilman"
+    role="Lead Engineer @ Storybook"
+    url="https://twitter.com/mshilman/status/1773597999106547844?ref_src=twsrc%5Etfw"
+><p lang="en" dir="ltr">Shaun is wonderful. He radiates positive energy.<br/>He also delivers. He tamed <a href="https://twitter.com/storybookjs?ref_src=twsrc%5Etfw">@storybookjs</a> unruly integrations, tackled thorny issues like theming, CLI install &amp; error docs. At every step he brought skill, care, empathy, and enthusiastic collaboration. Would work with him again!</p></TestimonialCard>
 
-> Shaun is so fun to work with! His energy and passion is inspiring! In addition to being a great person to work with, Shaun is also a great engineer!
-Shaun has been instrumental in creating tools to save internal team members dozens of hours a week. Shaun has also created crucial Storybook addons that simplified styling workflows greatly for users! Shaun is your person if you want to have fun and be inspired at work and get things done. - *Reuben Ellis, Solutions Engineer at Chromatic*
-> 
+<TestimonialCard
+    image={Joe}
+    name="Joe Vaughan"
+    role="Core team @ Storybook"
+><p lang="en" dir="ltr">Shaun is a fantastic engineer, whose sensitivity for building excellent developer tools and advocating for best-possible developer experience shines through in everything he delivers. He has immense knowledge of frontend tooling and a knack for taking technical challenges and resolving them with excellent communication and infectious enthusiasm. I loved working with Shaun on Storybook & Chromatic, and I'm so excited to follow his work in the years to come.</p></TestimonialCard>
 
-> Shaun was my favorite co-conspirator to work with. Not only did he dream up valuable ideas and ingenious implementations, but he made sure we had a really good time doing it. His individual efforts at engineering, writing, and community support have proven to be extraordinarily thoughtful and helpful. But, for me, his biggest impact was in how he consistently improved the work of everyone he worked alongside. He was also often the brightest light in a meeting, but never at the expense of others being seen. For example, he started playing some energizing music to fill the otherwise dead silence before an all-hands **and** he’d share about the song or artist in a way that got others talking. - Kyle Gach, Developer Experience Engineer at Chromatic
->
+<TestimonialCard
+    image={Reuben}
+    name="Reuben Ellis"
+    role="Solution Engineer @ Chromatic"
+ ><p lang="en" dir="ltr">Shaun is so fun to work with! His energy and passion is inspiring! In addition to being a great person to work with, Shaun is also a great engineer!
+Shaun has been instrumental in creating tools to save internal team members dozens of hours a week. Shaun has also created crucial Storybook addons that simplified styling workflows greatly for users! Shaun is your person if you want to have fun and be inspired at work and get things done.</p></TestimonialCard>
+
+<TestimonialCard
+    image={Kyle}
+    name="Kyle Gach"
+    role="Developer Experience Engineer @ Chromatic"
+><p lang="en" dir="ltr">Shaun was my favorite co-conspirator to work with. Not only did he dream up valuable ideas and ingenious implementations, but he made sure we had a really good time doing it. His individual efforts at engineering, technical writing, and community support have proven to be extraordinarily thoughtful and helpful. But, for me, his biggest impact was in how he consistently improved the work of everyone he worked alongside. He was also often the brightest light in a meeting, but never at the expense of others being seen. For example, he started playing some energizing music to fill the otherwise dead silence before each all-hands **and** he’d share about the song or artist in a way that got others talking.</p></TestimonialCard>
+
+</ul>
 
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
