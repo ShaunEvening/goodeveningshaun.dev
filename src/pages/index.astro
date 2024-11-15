@@ -4,9 +4,9 @@ import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Section from "../components/Section.astro";
 
+import BlueSkyIcon from "../components/icons/BlueSkyIcon.astro";
 import GithubIcon from "../components/icons/GithubIcon.astro";
 import LinkedInIcon from "../components/icons/LinkedInIcon.astro";
-import TwitterIcon from "../components/icons/TwitterIcon.astro";
 import RightArrowIcon from "../components/icons/RightArrowIcon.astro";
 
 import { SOCIAL_LINKS } from "../consts";
@@ -41,20 +41,20 @@ import HEADSHOT from "../assets/images/2024-profile-4.png";
           <GithubIcon class="inline leading-none text-lg" />
         </a>
         <a
+          href={SOCIAL_LINKS.BLUESKY}
+          target="_blank"
+          class="transition-all hover:scale-110 font-semibold text-xl text-pink-600 hover:text-pink-700 border-2 border-violet-50 hover:border-violet-50 px-3 py-1 bg-violet-50 leading-none rounded-3xl capitalize"
+        >
+          <span class="sr-only">Visit Shaun's BlueSky profile.</span>
+          <BlueSkyIcon class="inline leading-none text-lg" />
+        </a>
+        <a
           href={SOCIAL_LINKS.LINKEDIN}
           target="_blank"
           class="transition-all hover:scale-110 font-semibold text-xl text-pink-600 hover:text-pink-700 border-2 border-violet-50 hover:border-violet-50 px-3 py-1 bg-violet-50 leading-none rounded-3xl capitalize"
         >
           <span class="sr-only">Visit Shaun's LinkedIn profile.</span>
           <LinkedInIcon class="inline leading-none text-lg" />
-        </a>
-        <a
-          href={SOCIAL_LINKS.TWITTER}
-          target="_blank"
-          class="transition-all hover:scale-110 font-semibold text-xl text-pink-600 hover:text-pink-700 border-2 border-violet-50 hover:border-violet-50 px-3 py-1 bg-violet-50 leading-none rounded-3xl capitalize"
-        >
-          <span class="sr-only">Visit Shaun's Twitter profile.</span>
-          <TwitterIcon class="inline leading-none text-lg" />
         </a>
         <a
           href={SOCIAL_LINKS.EMAIL}

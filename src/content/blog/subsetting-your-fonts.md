@@ -166,4 +166,4 @@ The web currently produces a significant amount of carbon emissions, but it does
 
 If this is something that’s interesting to you, let’s stay in touch! The more people we have designing and building a greener web, the larger our impact.
 
-I will be publishing more green web tips over the coming weeks so stay tuned for more. Let me know what you think via [Twitter](https://twitter.com/Integrayshaun), [Threads](https://www.threads.net/@shaunevening), or connect with me on [LinkedIn](https://www.linkedin.com/in/shaunevening/).
+I will be publishing more green web tips over the coming weeks so stay tuned for more. Let me know what you think via [BlueSky](https://bsky.app/profile/goodeveningshaun.dev), [Threads](https://www.threads.net/@shaunevening), or connect with me on [LinkedIn](https://www.linkedin.com/in/shaunevening/).
